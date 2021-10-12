@@ -1,21 +1,23 @@
 #include "get_next_line.h"
 
-int	main(int arc, char **arv)
+void ft_pepe(void)
+{
+	system("leaks a.out");
+}
+
+int	main(void)
 {
 	char	*str;
 	int		fd;
 
-	(void)arc;
-	fd = open(arv[1], O_RDONLY);
-	str = get_next_line(fd);
-	printf("%s\n", str);
-	str = get_next_line(fd);
-	printf("%s\n", str);
-	str = get_next_line(fd);
-	printf("%s\n", str);
-	str = get_next_line(fd);
-	printf("%s\n", str);
-	str = get_next_line(fd);
-	printf("%s\n", str);
+	atexit(ft_pepe);
+
+	fd = open("lotr.txt", O_RDONLY);
+	while ((str = get_next_line(17)))
+	{
+		printf("%s", str);
+		free(str);
+	}	
+	//system("leaks a.out");
 	return (0);
 }
